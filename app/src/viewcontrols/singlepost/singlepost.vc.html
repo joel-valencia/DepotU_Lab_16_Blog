@@ -1,1 +1,9 @@
-<h1>Hello World!</h1>
+<div class="container">
+    <div class="post">
+    <h3 class="title">{{ post.title }}</h3>
+    <!--<div class="editPost"><a href="#/edit/{{ post.id }}">Edit Post</a></div>-->
+    <div class="author">By {{ post.author }}</div>
+    <div class="content">{{ post.content }}</div>
+    <div class="date">{{ post.createdAt }}</div>
+    </div>
+</div>

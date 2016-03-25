@@ -5,28 +5,32 @@ import APIService from '../../services/api/api.svc';
 export default class PostsRepository extends BaseRepository {
     posts: any = [];
     test: any = "works";
+    post: any = {};
     
     constructor(private apiSvc: APIService) {
         super();
-        //console.log("repository active");
-        //console.log(apiSvc.serviceTest());
-        
-        
     }
     
     populatePosts() {
-        //let response = this.apiSvc.getAllPosts();
-        //console.log(response);
-        //this.posts = response;
-        
         return this.apiSvc.getAllPosts().then((response) => {
-            //console.log(response);
             this.posts = response;
             return response;
         });
     }
     
-
+    populateSinglePost(id:string) {
+        return this.apiSvc.getSinglePost(id).then((response) => {
+            this.post = response;
+            return response;
+        });
+    }
+    
+    addPost(post:{}) {
+        return this.apiSvc.createPost(post).then((response) => {
+            this.post = response;
+            return response;
+        });
+    }
 }
 
 register.injectable('posts-repo', PostsRepository, [APIService]);

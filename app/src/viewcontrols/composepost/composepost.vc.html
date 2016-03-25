@@ -1,1 +1,11 @@
-<h1>Hello World!</h1>
+<div class="container">
+    <div class="formLabel">Title</div>
+    <input plat-bind="post.title">
+    <div class="formLabel">Author</div>
+    <input plat-bind="post.author">
+    <div class="formLabel">Content</div>
+    <textarea plat-bind="post.content"></textarea>
+    <button plat-tap="send()">Send</button>
+    
+    <div class="result"><h4>{{ result }}</h4></div>
+</div>

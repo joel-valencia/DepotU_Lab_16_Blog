@@ -25,7 +25,6 @@
         "app/src/repositories/posts/posts.repo.ts",
         "app/src/services/api/api.svc.ts",
         "app/src/services/base/base.svc.ts",
-        "app/src/services/blogapi/blogapi.svc.ts",
         "app/src/viewcontrols/base/base.vc.ts",
         "app/src/viewcontrols/composepost/composepost.vc.ts",
         "app/src/viewcontrols/home/home.vc.ts",
