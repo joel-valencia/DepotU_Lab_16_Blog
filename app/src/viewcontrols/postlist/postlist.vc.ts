@@ -6,21 +6,27 @@ export default class PostListViewControl extends BaseViewControl {
     templateString: string = require('./postlist.vc.html');
 
     context: any = {
-        posts: [],
-        postTemp: []
+        posts: []
     };
     
     constructor(private postRepo: PostRepository) {
         super()
         
         this.postRepo.populatePosts().then((response) => {
+            let postsTemp:Array<{}> = [];
+            
             // reverse sort posts
-            this.context.postTemp = this.postRepo.posts.reverse();
+            postsTemp = this.postRepo.posts.reverse();
             
             // make date and time friendly
-            
-            
-            this.context.posts = this.context.postTemp;
+            // for (let i = 0; i < postsTemp.length; i++) {
+            //     var tempDate = new Date(postsTemp[i].createdAt);
+            //     console.log(tempDate);
+            //     postsTemp[i].createdAt = tempDate;
+            // }
+
+            // put in context
+            this.context.posts = postsTemp;
         })
     }
 }
